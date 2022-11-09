@@ -27,7 +27,7 @@ jobs:
           server: server95.hosting.reg.ru
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.key }}
-          delete_remote_files: true
+          delete_remote_files: "true"
           
           # will put all file under this path
           local_path: ./* # default is ./*
