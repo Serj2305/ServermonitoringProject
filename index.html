@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление СМ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class = 'main-header'>
+        <nav class="main-header-nav">
+            <ul class='site-navigation'>
+                <li class="site-navigation-item"><a href="#">Главная</a></li>
+                <li class="site-navigation-item"><a href="#">Подключение систем мониторинга</a></li>
+                <li class="site-navigation-item"><a href="#">Просмотр узлов сети</a></li>
+                <li class="site-navigation-item"><a href="#">Проблемы</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="create-integration">
+            <h1>Создание интеграции</h1>
+            <form action="#">
+                <p class = 'name'>
+                    <b>Название</b><br>
+                    <input type="text" name="name" placeholder="Введите название">
+                </p>
+                <p class="description">
+                    <b>Описание</b><br>
+                    <input type="text" name="description" placeholder="Введите описание">
+                </p>
+                <p class="url-intr">
+                    <b>URL интерфейса</b><br>
+                    <input type="text" name = 'url' placeholder="Введите URL">
+                </p>
+                <p class = 'login'>
+                    <b>Логин</b><br>
+                    <input type="text" name="login" placeholder="Введите логин">
+                </p>
+                <p class="password">
+                    <b>Пароль</b><br>
+                    <input type="password" name="password" placeholder="Введите пароль">
+                </p>
+                <p class='button-clear'>
+                   <input type="reset" value="Очистить">
+                </p>
+                <p class="button-add">
+                    <input type="submit" value="Добавить">
+                </p>
+            </form>
+        </section>
+    </main>
+    <footer class ='main-footer'>
+        <p>2022 Все права защищены</p>
+    </footer>
+</body>
+</html>
