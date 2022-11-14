@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Добавление СМ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -21,8 +22,8 @@
     </header>
     <main>
         <section class="create-integration">
-            <h1>Создание интеграции с СМ</h1>
-            <form action="#">
+            <h1>Создание интеграции</h1>
+            <form action="#" method="POST" id="integration-form">
                 <p class = 'name'>
                     <b>Название</b><br>
                     <input type="text" name="name" placeholder="Введите название">
@@ -33,7 +34,7 @@
                 </p>
                 <p class="url-intr">
                     <b>URL интерфейса</b><br>
-                    <input type="text" name = 'url' placeholder="Введите URL">
+                    <input type="text" name = 'url' placeholder="Введите URL" required>
                 </p>
                 <p class = 'login'>
                     <b>Логин</b><br>
@@ -55,5 +56,17 @@
     <footer class ='main-footer'>
         <p>2022 Все права защищены</p>
     </footer>
+    <div id = 'popup' class = 'popup hidden'>
+        <div class = 'popup-body'>
+            <div class = popup-content>
+                <img class = 'close-popup' src="/img/close_icon.png" alt="крестик для закрытия окошка" width="20" height="20">
+                <div class = 'popup-text'>
+                    Сервер успешно добавлен! <br>
+                    Версия: <span class = 'vote-status'></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/submitingForm.js"></script>
 </body>
 </html>
