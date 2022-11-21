@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000
+}
+/*стилизуем шапку*/
+.site-navigation-item{
+    list-style-type: none;
+}
+.site-navigation a {
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.main-header{
+    background-color: #C9C9C9;
+}
+.site-navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+.site-navigation a:hover {
+background: #0078BF;
+color: #fff;
+}
+/*стилизуем основноую страницу*/
+.main-content{
+    background-color: #C9C9C9;
+    padding: 30px 50px;
+    margin: 30px;
+}
+.main-content h1{
+    font-size: 30px;
+    line-height: 70%;
+    text-align: center;
+}
+.servers-list-blok{
+    background-color: #fff;
+    height:400px;
+    margin-bottom: 15px;
+}
+.servers-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.add-server{
+    background-color:#fff;
+    border:#000000 1px solid;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    padding: 10px 15px;
+}
+
+.add-server:hover {
+    background: #0078BF;
+    color: #fff;
+}
+/*стилизуем подвал*/
+.main-footer{
+    background-color: #C9C9C9;
+    padding: 5px;
+}
