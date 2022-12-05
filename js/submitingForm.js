@@ -30,7 +30,7 @@ function getXmlHttp(){
 
 function vote() {
 	// (1) создать объект для запроса к серверу
-	var req = getXmlHttp()  
+	var req = getXmlHttp() 
     const formContent = new FormData(form);//сериализуем данные формы
 
         // (2)
@@ -46,9 +46,9 @@ function vote() {
 
 			statusElem.innerHTML = req.statusText // показать статус (Not Found, ОК..)
 
-			if(req.status == 200) { 
+			if(req.status == 200 || req.status == 201) { 
                  // если статус 200 (ОК) - выдать ответ пользователю
-				alert(req.responseText);
+				statusElem.innerHTML = req.statusText;
 			}
 			// тут можно добавить else с обработкой ошибок запроса
 		}
