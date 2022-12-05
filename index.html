@@ -2,71 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Добавление СМ</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/css/home-page-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class = 'main-header'>
         <nav class="main-header-nav">
             <ul class='site-navigation'>
-                <li class="site-navigation-item"><a href="/home-page.html">Главная</a></li>
-                <li class="site-navigation-item"><a href="#">Подключение систем мониторинга</a></li>
+                <li class="site-navigation-item"><a href="/index.html" class="main-page">Главная</a></li>
+                <li class="site-navigation-item"><a href="/add-server.html">Подключение систем мониторинга</a></li>
                 <li class="site-navigation-item"><a href="#">Просмотр узлов сети</a></li>
-                <li class="site-navigation-item"><a href="#">Проблемы</a></li>
+                <li class="site-navigation-item"><a href="/problems-page.html">Проблемы</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="create-integration">
-            <h1>Создание интеграции</h1>
-            <form action="#" method="POST" id="integration-form">
-                <p class = 'name'>
-                    <b>Название</b><br>
-                    <input type="text" name="name" placeholder="Введите название">
-                </p>
-                <p class="description">
-                    <b>Описание</b><br>
-                    <input type="text" name="description" placeholder="Введите описание">
-                </p>
-                <p class="url-intr">
-                    <b>URL интерфейса</b><br>
-                    <input type="text" name = 'url' placeholder="Введите URL" required>
-                </p>
-                <p class = 'login'>
-                    <b>Логин</b><br>
-                    <input type="text" name="login" placeholder="Введите логин">
-                </p>
-                <p class="password">
-                    <b>Пароль</b><br>
-                    <input type="password" name="password" placeholder="Введите пароль">
-                </p>
-                <p class='button-clear'>
-                   <input type="reset" value="Очистить">
-                </p>
-                <p class="button-add">
-                    <input type="submit" value="Добавить">
-                </p>
-            </form>
+        <section class="main-content">
+            <h1>Список подключенных серверов</h1>
+            <p class="servers-count">Количество подключенных серверов: <span class="number-of-servers">0</span></p>
+            <div class="servers-list-blok">
+                <ul class = 'servers-list'>
+                    
+                </ul>
+            </div>
+                <a class = 'add-server' href="/add-server.html">Добавить сервер</a>
         </section>
     </main>
     <footer class ='main-footer'>
-        <p>2022 Все права защищены</p>
     </footer>
-    <div id = 'popup' class = 'popup hidden'>
-        <div class = 'popup-body'>
-            <div class = popup-content>
-                <img class = 'close-popup' src="/img/close_icon.png" alt="крестик для закрытия окошка" width="20" height="20">
-                <div class = 'popup-text'>
-                    Сервер успешно добавлен! <br>
-                    Версия: <span class = 'vote-status'></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="/js/submitingForm.js"></script>
+    <script src="/js/server-list.js"></script>
 </body>
 </html>
