@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000
+}
+
+input {
+    width: 80%;
+    height: 50px;
+    font-family: 'Inter', serif;
+    font-size: 16px;
+}
+
+.create-integration h1 {
+    font-size: 30px;
+    line-height: 70%;
+    text-align: center;
+}
+.site-navigation-item{
+    list-style-type: none;
+}
+.site-navigation a {
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+form b{
+    opacity: 0.6;
+}
+.main-header{
+    background-color: #C9C9C9;
+}
+.site-navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+.site-navigation a:hover {
+background: #0078BF;
+color: #fff;
+}
+.create-integration{
+    background-color: #C9C9C9;
+    padding: 30px;
+    margin: 30px;
+}
+.create-integration form{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-areas: 'name login password' 'description  button-clear button-add' 'url-intr  button-clear button-add';
+    column-gap: 30px;
+}
+form .name{
+    grid-area: name;
+}
+form .description{
+    grid-area:  description;
+}
+form .url-intr{
+    grid-area: url-intr;
+}
+form .login{
+    grid-area: login;
+}
+form .password{
+    grid-area: password;
+}
+form .button-clear{
+    grid-area: button-clear;
+    align-self: center;
+    justify-self:start;
+}
+form .button-add{
+    grid-area: button-add;
+    align-self: center;
+    justify-self:start;
+}
+form .button-add input,form .button-clear input{
+    width: 200px;
+}
+
+form .button-add input:hover,form .button-clear input:hover {
+    background: #0078BF;
+    color: #fff;
+}
+.main-footer{
+    background-color: #C9C9C9;
+    padding: 5px;
+}
+.popup{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+}
+.popup-body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup-content{
+    background-color: #fff;
+    color: #000;
+    max-width: 800px;
+    padding: 30px 30px;
+    position: relative;
+}
+.close-popup{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.hidden{
+    display: none;
+}
