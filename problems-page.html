@@ -23,16 +23,46 @@
     </header>
     <main>
         <section class="filters">
-            <select name="server-filter" id="server-filter">
-                <option value="All-servers">Все сервера</option>
+            <select title="фильтр серверов" name="server-filter" id="server-filter" class="server-filter">
+                <option class="filter-servers-item" value="All-servers">Все сервера</option>
             </select>
-            <select name="data-filter" id="data-filter">
-                <option value="All-dates">За все время</option>
+            <h1>Список проблем на серверах</h1>
+            <select title="фильтр по дате добавления серверов" name="date-filter" id="date-filter" class="date-filter">
+                <option class = 'filter-date-item' value="All-dates">За все время</option>
             </select>
         </section>
-        <section class="table">
-            
+        <section class="main-content">
+            <div class="problems-list-blok">
+                <ul class = 'problems-list'>
+                    <li class="problems-list-item item-heading">
+                        <div class="name-server-heading name-server-value ">Сервер</div>
+                        <div class="name-object-heading name-object-value">Объект</div>
+                        <div class="name-problem-heading name-problem-value">Проблема</div>
+                        <div class="date-heading date-value">Дата</div>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
+    <footer class="main-footer"></footer>
+    <!--шаблон элемента списка серверов--> 
+    <template id="problems-item-template">
+        <li class="problems-list-item item-value">
+            <div class="name-server-value"></div>
+            <div class="name-object-value"></div>
+            <div class="name-problem-value"></div>
+            <div class="date-value"></div>
+        </li>
+    </template> 
+    <!--шаблон элемента списка серверов--> 
+    <template id="filter-servers-item-template">
+        <option class="filter-servers-item" value=""></option>
+    </template> 
+    <!--шаблон элемента списка серверов-->  
+    <template id="filter-date-item-template">
+        <option class="filter-date-item" value=""></option>
+    </template> 
+    <script src="/js/problem-list.js"></script>
+    <script src="/js/filters.js"></script>
 </body>
 </html>
