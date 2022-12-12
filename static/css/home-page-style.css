@@ -108,4 +108,38 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
-/*стилизуем подвал*/
+
+/*делаем табличный вид списка*/
+.servers-list-item{
+    display: flex;
+}
+.item-heading{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+.name-value{
+    width: 30%;
+    text-align: center;
+    align-self: center;
+}
+.url-value{
+    width: 50%;
+    text-align: center;
+    align-self: center;
+}
+.problems-count-value{
+    width: 10%;
+    text-align: center;
+    align-self: center;
+}
+.objects-count-value{
+    width: 10%;
+    text-align: center;
+    align-self: center;
+}
+.servers-list-item div{
+    border: #000000 1px solid;
+    overflow-x:hidden;
+    white-space: nowrap;
+}
