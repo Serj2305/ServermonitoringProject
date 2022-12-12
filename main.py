@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 
 app = Flask(__name__)
@@ -26,22 +26,28 @@ def problems_page():
 @app.route('/handle_data', methods=['POST'])
 def processing_data_from_fields():
     url = request.form['url']
-    version = getting_url(url)
-    return version
+    try:
+        version = getting_url(url)
+    except Exception:
+        version = "-"
+    return jsonify(version)
 
 
 # обработка url
 def getting_url(url):
     if url[-1] != "/":
-        url = url.split("/", 3)[0] + "//" + url.split("/", 3)[2] + "/metrics"
+        try:
+            url = url.split("/", 3)[0] + "//" + url.split("/", 3)[2] + "/metrics"
+        except IndexError:
+            return "-"
     else:
         url = url + "/metrics"
     info = requests.get(f'{url}').content.decode("utf-8").split(sep="\n")
-    version = 'NotInfoFromPython'
+    version = '-'
     for i, m in enumerate(info, 1):
         if i == 146:
-            version = m
-    return version  # jsonfly для возвращении информации в js
+            version = m[-10:-4]
+    return version
 
 
 if __name__ == "__main__":
