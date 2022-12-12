@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 
 app = Flask(__name__)
@@ -27,7 +27,7 @@ def problems_page():
 def processing_data_from_fields():
     url = request.form['url']
     version = getting_url(url)
-    return version
+    return jsonify(version)
 
 
 # обработка url
@@ -41,7 +41,7 @@ def getting_url(url):
     for i, m in enumerate(info, 1):
         if i == 146:
             version = m
-    return version  # jsonfly для возвращении информации в js
+    return version
 
 
 if __name__ == "__main__":
