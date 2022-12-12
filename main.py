@@ -21,26 +21,31 @@ def add_server():
 def problems_page():
     return render_template('problems-page.html')
 
-
 # обработка информации с полей
 @app.route('/handle_data', methods=['POST'])
 def processing_data_from_fields():
     url = request.form['url']
-    version = getting_url(url)
+    try:
+        version = getting_url(url)
+    except Exception:
+        version = "Нет данных"
     return jsonify(version)
 
 
 # обработка url
 def getting_url(url):
     if url[-1] != "/":
-        url = url.split("/", 3)[0] + "//" + url.split("/", 3)[2] + "/metrics"
+        try:
+            url = url.split("/", 3)[0] + "//" + url.split("/", 3)[2] + "/metrics"
+        except IndexError:
+            return "Нет данных"
     else:
         url = url + "/metrics"
     info = requests.get(f'{url}').content.decode("utf-8").split(sep="\n")
-    version = 'NotInfoFromPython'
+    version = 'Нет данных'
     for i, m in enumerate(info, 1):
         if i == 146:
-            version = m
+            version = m[-10:-4]
     return version
 
 
