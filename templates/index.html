@@ -27,7 +27,12 @@
             <p class="servers-count">Количество подключенных серверов: <span class="number-of-servers">0</span></p>
             <div class="servers-list-blok">
                 <ul class = 'servers-list'>
-                    
+                    <li class="servers-list-item item-heading">
+                        <div class="name-heading name-value">Название</div>
+                        <div class="url-heading url-value">Url</div>
+                        <div class="problems-count-heading problems-count-value">Проблемы</div>
+                        <div class="objects-count-heading objects-count-value">Объекты</div>
+                    </li>
                 </ul>
             </div>
                 <a class = 'add-server' href="{{url_for('add_server')}}">Добавить сервер</a>
@@ -35,6 +40,14 @@
     </main>
     <footer class ='main-footer'>
     </footer>
+    <template id="servers-item-template">
+        <li class="servers-list-item item-value">
+            <div class="name-value"></div>
+            <div class="url-value"></div>
+            <div class="problems-count-value"></div>
+            <div class="objects-count-value"></div>
+        </li>
+    </template>
     <script src="{{ url_for('static',filename='js/server-list.js')}}"></script>
 </body>
 </html>

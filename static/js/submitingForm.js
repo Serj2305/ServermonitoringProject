@@ -24,8 +24,8 @@ function createReq(formContent,elem) {
     }
     throw new Error(`${response.status} ${response.statusText}`);
 }).then((data) => {
-    elem.innerHTML = data;
+    elem.innerHTML = `Сервер успешно добавлен! ${data}`;
 }).catch(function (error) {
-    elem.innerHTML = error;
+    elem.innerHTML = 'Произошла ошибка, введите корректный url!';
 });
 };
