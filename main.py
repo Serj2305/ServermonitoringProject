@@ -43,6 +43,7 @@ def getting_url(url):
         url = url + "/metrics"
     info = requests.get(f'{url}').content.decode("utf-8").split(sep="\n")
     version = 'Нет данных'
+    # находим нужную информацию
     for i, m in enumerate(info, 1):
         if i == 146:
             version = m[-10:-4]
