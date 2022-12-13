@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import requests
+import database
 
 app = Flask(__name__)
 
@@ -25,20 +26,23 @@ def problems_page():
 # обработка информации с полей
 @app.route('/handle_data', methods=['POST'])
 def processing_data_from_fields():
+    name = request.form['name']
+    description = request.form['description']
     url = request.form['url']
     try:
         version = getting_url(url)
+        database.enter_data_in_db(name, description, url)
     except Exception:
-        version = "Нет данных"
+        version = 'Нет данных'
     return jsonify(version)
 
 
 # обработка url
 def getting_url(url):
     info = requests.get(f'{url}').json()
-    version = info["data"]["version"]
+    version = info['data']['version']
     return version
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
