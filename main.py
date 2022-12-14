@@ -8,7 +8,8 @@ app = Flask(__name__)
 # загрузка страницы index
 @app.route('/', methods=['GET', 'POST', 'DELETE'])
 def index():
-    return render_template('index.html')
+    data_from_database = database.data_packaging()
+    return render_template('index.html')  # , jsonify(data_from_database)
 
 
 # загрузка страницы add_server
