@@ -40,18 +40,18 @@ function appendServer(servers) {
     serversList.appendChild(fragment);
 };
 
-// async function getListServers() {
-//     try {
-//       let response = await fetch('#' , {
-//         method : "GET"
-//       });
-//       let servers = await response;
-//       appendServer(servers)
-//     } catch(error) {
-//       alert(error);
-//     }
-//   };
-  
-//   getListServers()
+function createReq() {
+    fetch('servers_list')
+    .then((response) => {
+      if(response.ok) {
+        return response.json();
+      }
+      throw new Error(`${response.status} ${response.statusText}`);
+  }).then((data) => {
+      appendServer(data)
+  }).catch(function (error) {
+      alert(error)
+  });
+  };
 
-appendServer(fakeResponse);
+createReq()
