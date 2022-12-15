@@ -8,9 +8,13 @@ app = Flask(__name__)
 # загрузка страницы index
 @app.route('/', methods=['GET', 'POST', 'DELETE'])
 def index():
+    return render_template('index.html')
+    
+# получение списка серверов из бд
+@app.route('/servers_list', methods=['GET'])
+def getting_server_data():
     data_from_database = database.data_packaging()
-    return render_template('index.html')  # , jsonify(data_from_database)
-
+    return jsonify(data_from_database)
 
 # загрузка страницы add_server
 @app.route('/add_server', methods=['GET', 'POST', 'DELETE'])
