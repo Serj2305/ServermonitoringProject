@@ -16,7 +16,7 @@ closePopupButton.addEventListener('click', () => {
     popup.classList.add('hidden');
 });
 deleteServerButton.addEventListener('click', () => {
-    fetch('тут должен быть адрес', {
+    fetch('/delete_data', {
         method: 'POST',
         body: JSON.stringify(popupNameServer.textContent)
     }).then((response)=> {
