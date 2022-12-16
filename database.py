@@ -28,7 +28,7 @@ def data_packaging():
     number_of_server = 0
     for row in records:
         number_of_server += 1
-        data_from_database[f'{number_of_server}'] = {'name': row[0], 'description': row[1], 'url': row[2]}
+        data_from_database[f'{number_of_server}'] = {'name': row[0], 'description': row[1], 'url': row[2], 'problems' : row[3], 'objects' : row[4]}
     return data_from_database
 
 

@@ -16,16 +16,19 @@ closePopupButton.addEventListener('click', () => {
     popup.classList.add('hidden');
 });
 deleteServerButton.addEventListener('click', () => {
+    deleteElement = document.querySelector('[data-name="'+popupNameServer.textContent+'"]');
+    deleteElement.remove();
+    numberServers.innerHTML = serversList.childElementCount - 1;
+    popup.classList.add('hidden');
     fetch('/delete_data', {
         method: 'POST',
         body: JSON.stringify(popupNameServer.textContent)
     }).then((response)=> {
-        if(response.ok) {deleteElement = document.querySelector(`.${popupNameServer.textContent}`);
-        deleteElement.remove();
-        numberServers.innerHTML = serversList.childElementCount - 1;
-        popup.classList.add('hidden');
-    }
-    throw new Error();
+        if(!response.ok) {
+            serversList.appendChild(deleteElement);
+            numberServers.innerHTML = serversList.childElementCount - 1;
+            alert('Не удалось удалить сервер, перезагрузите страницу и попробуйте снова');
+        }
      }).catch(() => alert('Не удалось удалить сервер, перезагрузите страницу и попробуйте снова'));
 });
 
@@ -33,13 +36,14 @@ function appendServer(servers) {
     const fragment = document.createDocumentFragment();
     numberServers.innerHTML = Object.keys(servers).length
     Object.entries(servers).forEach(function(server) {
+        console.log(server);
         const serversItem = serversItemTemplate.cloneNode(true)
         serversItem.querySelector('.name-value').textContent = server[1].name;
         serversItem.querySelector('.name-value').addEventListener('click', () => openPopup(server));
         serversItem.querySelector('.url-value').textContent = server[1].url;
         serversItem.querySelector('.problems-count-value').textContent = server[1].problems;
         serversItem.querySelector('.objects-count-value').textContent = server[1].objects;
-        serversItem.querySelector('.item-value').classList.add(`${server[1].name}`)
+        serversItem.querySelector('.item-value').dataset.name = server[1].name;
         fragment.appendChild(serversItem);
     });
     serversList.appendChild(fragment);
@@ -57,6 +61,6 @@ function createReq() {
   }).catch(function (error) {
       alert(error)
   });
-  };
+ };
 
 createReq()
