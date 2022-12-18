@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*стилизуем шапку*/
+.site-navigation-item{
+    list-style-type: none;
+}
+.site-navigation a {
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 700;
+}
+.main-header{
+    background-color: #E0E6FF;
+}
+.site-navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+}
+.site-navigation a{
+    position: relative;
+    cursor: pointer;
+}
+.site-navigation a:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.site-navigation a:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px; /* Высота линии */
+    background-color: blue; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+/*стилизуем основную страницу*/
+/*стилизуем основноую страницу*/
+main{
+    background-color: #F3F4FF;
+}
+.filters{
+    display: flex;
+    padding: 30px 110px;
+    justify-content: space-between;
+    border-bottom: 2px solid #ACACAC ;
+}
+.filters h1{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+.filters select{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    height: 40px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 2px solid #000;
+    background-color: rgba(0,0,0,0);
+    outline: 0;
+    width: 20%;
+}
+.objects-list-blok{
+    height:600px;
+}
+.objects-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.objects-list-item{
+    display: flex;
+}
+.item-heading{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+.name-server-value{
+    width: 15%;
+    text-align: center;
+    align-self: center;
+}
+.name-object-value{
+    width: 30%;
+    text-align: center;
+    align-self: center;
+}
+.description-objects-value{
+    width: 55%;
+    text-align: center;
+    align-self: center;
+}
+.objects-list-item div{
+    border: 1px solid #ACACAC;
+    overflow-x:hidden;
+    white-space: nowrap;
+}

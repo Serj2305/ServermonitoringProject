@@ -29,6 +29,10 @@ def add_server():
 def problems_page():
     return render_template('problems-page.html')
 
+# загрузка страницы objects-page
+@app.route('/objects_page_html', methods=['GET', 'POST', 'DELETE'])
+def objects_page():
+    return render_template('objects-page.html')
 
 # обработка информации с полей
 @app.route('/handle_data', methods=['POST'])

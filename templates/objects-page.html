@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проблемы</title>
-    <link rel= "stylesheet" href="{{ url_for('static',filename='css/problems-page-style.css')}}">
+    <title>Объекты</title>
+    <link rel= "stylesheet" href="{{ url_for('static',filename='css/objects-page-style.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
 </head>
 <body>
     <header class = 'main-header'>
@@ -23,46 +24,23 @@
     </header>
     <main>
         <section class="filters">
+            <h1>Список объектов на серверах</h1>
             <select title="фильтр серверов" name="server-filter" id="server-filter" class="server-filter">
                 <option class="filter-servers-item" value="All-servers">Все сервера</option>
             </select>
-            <h1>Список проблем на серверах</h1>
-            <select title="фильтр по дате добавления серверов" name="date-filter" id="date-filter" class="date-filter">
-                <option class = 'filter-date-item' value="All-dates">За все время</option>
-            </select>
         </section>
         <section class="main-content">
-            <div class="problems-list-blok">
-                <ul class = 'problems-list'>
-                    <li class="problems-list-item item-heading">
+            <div class="objects-list-blok">
+                <ul class = 'objects-list'>
+                    <li class="objects-list-item item-heading">
                         <div class="name-server-heading name-server-value ">Сервер</div>
                         <div class="name-object-heading name-object-value">Объект</div>
-                        <div class="name-problem-heading name-problem-value">Проблема</div>
-                        <div class="date-heading date-value">Дата</div>
+                        <div class="description-objects-heading description-objects-value">Информация об объекте</div>
                     </li>
                 </ul>
             </div>
         </section>
     </main>
     <footer class="main-footer"></footer>
-    <!--шаблон элемента списка серверов--> 
-    <template id="problems-item-template">
-        <li class="problems-list-item item-value">
-            <div class="name-server-value"></div>
-            <div class="name-object-value"></div>
-            <div class="name-problem-value"></div>
-            <div class="date-value"></div>
-        </li>
-    </template> 
-    <!--шаблон элемента списка серверов--> 
-    <template id="filter-servers-item-template">
-        <option class="filter-servers-item" value=""></option>
-    </template> 
-    <!--шаблон элемента списка серверов-->  
-    <template id="filter-date-item-template">
-        <option class="filter-date-item" value=""></option>
-    </template> 
-    <script src="{{ url_for('static',filename='js/problem-list.js')}}"></script>
-    <script src="{{ url_for('static',filename='js/filters.js')}}"></script>
 </body>
 </html>
