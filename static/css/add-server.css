@@ -150,6 +150,7 @@ form p{
     position: absolute;
     top: 0;
     right: 0;
+    cursor: pointer;
 }
 .hidden{
     display: none;

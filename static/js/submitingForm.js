@@ -1,14 +1,25 @@
 const popup = document.querySelector('.popup');
-const buttonOpen = document.querySelector('.button-add');
+const buttonAdd = document.querySelector('.button-add');
 const buttonClose = document.querySelector('.close-popup');
 const form = document.querySelector('#integration-form')
-buttonOpen.addEventListener('click', (evt) => {
+buttonAdd.addEventListener('click', (evt) => {
     evt.preventDefault();
-    popup.classList.remove('hidden');
-    const statusElem = document.querySelector('.vote-status');
-    const content = new FormData(form);
-    
-    createReq(content, statusElem);
+    if(form.name.value === '') {
+        alert( "Пожалуйста заполните поле c названием сервера." );
+    }
+    else if(form.description.value === '') {
+        alert( "Пожалуйста заполните поле c описанием сервера." );
+    }
+    else if(form.url.value === '') {
+        alert( "Пожалуйста заполните поле c url сервера." );
+    }
+    else{
+        popup.classList.remove('hidden');
+        const statusElem = document.querySelector('.vote-status');
+        const content = new FormData(form);
+        
+        createReq(content, statusElem);
+    }
 } );
 buttonClose.addEventListener('click', () => {
     popup.classList.add('hidden');
@@ -24,6 +35,9 @@ function createReq(formContent,elem) {
     }
     throw new Error(`${response.status} ${response.statusText}`);
 }).then((data) => {
+    if(data === 'Нет данных'){
+        throw new Error('')
+    }
     elem.innerHTML = `Сервер успешно добавлен! ${data}`;
 }).catch(function (error) {
     elem.innerHTML = 'Произошла ошибка, введите корректный url!';
