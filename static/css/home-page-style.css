@@ -205,12 +205,7 @@ main{
     margin-top: 5px;
     margin-bottom: 2px;
 }
-.popup-content-container{
-    border: 2px solid #ACACAC;
-    min-height: 100px;
-    max-height: 100%;
-    padding: 5px;
-}
+
 .button-delete input{
     display: block;
     height: 30px;
@@ -233,3 +228,56 @@ main{
     opacity: 0.72;
     cursor: pointer;
 }
+.content-and-dashboards-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+}
+.popup-content-container{
+    border: 2px solid #ACACAC;
+    width: 80%;
+    min-height: 100px;
+    max-height: 100%;
+    padding: 5px;
+}
+.popup-dashboards-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 20%;
+    gap: 5px;
+}
+
+.dashboards-objects-count, .dashboards-servers-count{
+    text-align: center;
+    width: 90%;
+    border-radius: 10px;
+    align-items: center;
+}
+.dashboards-objects-count:hover, .dashboards-servers-count:hover{
+    opacity: 0.72;
+}
+
+.dashboards-objects-count{
+background-color: blue;
+}
+
+.dashboards-servers-count{
+    background-color: red;
+}
+
+.popup-objects-count, .popup-servers-count{
+    margin: 0;
+}
+
+.popup-objects-count a, .popup-servers-count a{
+    display: block;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+

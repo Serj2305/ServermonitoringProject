@@ -35,12 +35,26 @@
                     <li class="objects-list-item item-heading">
                         <div class="name-server-heading name-server-value ">Сервер</div>
                         <div class="name-object-heading name-object-value">Объект</div>
-                        <div class="description-objects-heading description-objects-value">Информация об объекте</div>
+                        <div class="description-objects-heading description-object-value">Информация об объекте</div>
                     </li>
                 </ul>
             </div>
         </section>
     </main>
     <footer class="main-footer"></footer>
+    <!--шаблон элемента списка объекта--> 
+    <template id="objects-item-template">
+        <li class="objects-list-item item-value">
+            <div class="name-server-value"></div>
+            <div class="name-object-value"></div>
+            <div class="description-object-value"></div>
+        </li>
+    </template> 
+    <!--шаблон элемента списка фильтрации серверов с объектами--> 
+    <template id="filter-servers-item-template">
+        <option class="filter-servers-item" value=""></option>
+    </template> 
+    <script src="{{ url_for('static',filename='js/object-list.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/filters-objects-page.js')}}"></script>
 </body>
 </html>

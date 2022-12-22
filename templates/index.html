@@ -47,8 +47,14 @@
                 <div class = 'popup-text'>
                     <h2 class="popup-name-server"></h2>
                     <p class="popup-title-description">Описание</p>
-                    <div class="popup-content-container">
-                        <span class="popup-description-server"></span>
+                    <div class="content-and-dashboards-container">
+                        <div class="popup-content-container">
+                            <span class="popup-description-server"></span>
+                        </div>
+                        <div class="popup-dashboards-container">
+                            <div class="dashboards-objects-count"><p  class="popup-objects-count"> <a href="{{url_for('objects_page')}}">5</a> </p></div>
+                            <div class="dashboards-servers-count"><p  class="popup-servers-count"><a href="{{url_for('problems_page')}}">10</a> </p></div>
+                        </div>
                     </div>
                     <p class="button-delete">
                         <input type="button" value="Удалить сервер">

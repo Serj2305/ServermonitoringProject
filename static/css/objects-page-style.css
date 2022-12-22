@@ -121,7 +121,7 @@ main{
     text-align: center;
     align-self: center;
 }
-.description-objects-value{
+.description-object-value{
     width: 55%;
     text-align: center;
     align-self: center;
@@ -130,4 +130,7 @@ main{
     border: 1px solid #ACACAC;
     overflow-x:hidden;
     white-space: nowrap;
+}
+.hidden-server{
+    display: none;
 }
