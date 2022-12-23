@@ -52,7 +52,7 @@ function appendFilterServersItem(currentName) {
 }
 
 function createReq() {
-    fetch('тут нужен адрес на функцию')
+    fetch('objects_list')
     .then((response) => {
       if(response.ok) {
         return response.json();
