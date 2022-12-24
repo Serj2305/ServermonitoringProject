@@ -10,6 +10,7 @@ app = Flask(__name__)
 # загрузка страницы index
 @app.route('/', methods=['GET', 'POST', 'DELETE'])
 def index():
+    objects_list_update()
     return render_template('index.html')
 
 
@@ -78,26 +79,34 @@ def clearing_url(url):
     return url
 
 
-# бесконечно берёт объекты с сервера
 @app.route('/objects_list', methods=['GET'])
+def objects_list_update():
+    dictionary = getting_objects_from_url()
+    return dictionary
+
+
+# бесконечно берёт объекты с сервера
 def getting_objects_from_url():
     while True:
         try:
-            url = 'http://localhost:9090/api/v1/targets/metadata'
-            objects = requests.get(f'{url}').json()
-            objects_dictionary = {}
-            objects_dictionary_sorted = {}
-            for i in objects['data']:
-                objects_dictionary[f"{i['metric']}"] = {"description": i['help'], "server": i['target']['instance']}
-            key_sorted = sorted(objects_dictionary)
-            for i in key_sorted:
-                objects_dictionary_sorted[f"{i}"] = {"description": objects_dictionary[i]['description'],
-                                                     "server": objects_dictionary[i]['server']}
-            sleep(0.5)
-            database.update_sqlite_table(len(objects_dictionary_sorted))
-            return objects_dictionary_sorted
+            if database.return_len_table() > 0:
+                url = 'http://localhost:9090/api/v1/targets/metadata'
+                objects = requests.get(f'{url}').json()
+                objects_dictionary = {}
+                objects_dictionary_sorted = {}
+                for i in objects['data']:
+                    objects_dictionary[f"{i['metric']}"] = {"description": i['help'], "server": i['target']['instance']}
+                key_sorted = sorted(objects_dictionary)
+                for i in key_sorted:
+                    objects_dictionary_sorted[f"{i}"] = {"description": objects_dictionary[i]['description'],
+                                                         "server": objects_dictionary[i]['server']}
+                sleep(0.5)
+                database.update_sqlite_table(len(objects_dictionary_sorted))
+                return objects_dictionary_sorted
+            else:
+                return {}
         except Exception:
-            return "{'!!!': {'description': '!!!', 'server': '!!!'}}"
+            return {}
 
 
 th = Thread(target=getting_objects_from_url, args=())
