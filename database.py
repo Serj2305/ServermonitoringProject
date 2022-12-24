@@ -32,6 +32,13 @@ def data_packaging():
     return data_from_database
 
 
+def return_len_table():
+    sqlite_select_query = """SELECT * from serverInformation"""
+    cursor.execute(sqlite_select_query)
+    records = cursor.fetchall()
+    return len(records)
+
+
 def update_sqlite_table(count_objects):
     sqlite_connection = sqlite3.connect('serverInformation.db')
     curs = sqlite_connection.cursor()
