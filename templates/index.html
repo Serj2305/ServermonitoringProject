@@ -24,7 +24,10 @@
     <main>
         <section class="main-content">
             <h1>Список подключенных серверов</h1>
-            <p class="servers-count">Количество подключенных серверов: <span class="number-of-servers">0</span></p>
+            <div class = 'open-charts-container'>
+                <p class="servers-count">Количество подключенных серверов: <span class="number-of-servers">0</span></p>
+                <img class="open-charts" src="{{ url_for('static',filename='img/charts-icon.png')}}" alt="графики" width="30" height="30">
+            </div>
             <div class="servers-list-blok">
                 <ul class = 'servers-list'>
                     <li class="servers-list-item item-heading">
@@ -40,6 +43,17 @@
     </main>
     <footer class ='main-footer'>
     </footer>
+    <div class="charts-container hidden">
+        <div class="charts-body">
+            <div class="charts-content">
+                <img class = 'close-charts' src="{{ url_for('static',filename='img/close_icon.png')}}" alt="крестик для закрытия окошка" width="20" height="20">
+                <div class="histogram">
+                    <canvas class="histogram-objects-count" width="600" height="400"></canvas>
+                    <canvas class="histogram-problems-count" width="600" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id = 'popup' class = 'popup hidden'>
         <div class = 'popup-body'>
             <div class = popup-content>
@@ -52,7 +66,7 @@
                             <span class="popup-description-server"></span>
                         </div>
                         <div class="popup-dashboards-container">
-                            <div class="dashboards-objects-count"><p  class="popup-objects-count"> <a href="{{url_for('objects_page')}}">5</a> </p></div>
+                            <div class="dashboards-objects-count"><p  class="popup-objects-count"><a href="{{url_for('objects_page')}}">5</a> </p></div>
                             <div class="dashboards-servers-count"><p  class="popup-servers-count"><a href="{{url_for('problems_page')}}">10</a> </p></div>
                         </div>
                     </div>
@@ -71,6 +85,7 @@
             <div class="objects-count-value"></div>
         </li>
     </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="{{ url_for('static',filename='js/server-list.js')}}"></script>
 </body>
 </html>

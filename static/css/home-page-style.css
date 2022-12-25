@@ -72,10 +72,18 @@ main{
     margin:0;
     margin-bottom: 45px;
 }
-.servers-count{
+.open-charts-container{ 
+    display: flex;
+    justify-content: space-between;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+.open-charts:hover{
+    cursor: pointer;
+    opacity: 0.72;
+}
+.servers-count{
     margin-bottom: 0;
 }
 .servers-list-blok{
@@ -239,6 +247,7 @@ main{
     min-height: 100px;
     max-height: 100%;
     padding: 5px;
+    
 }
 .popup-dashboards-container{
     display: flex;
@@ -246,6 +255,7 @@ main{
     align-content: space-between;
     width: 20%;
     gap: 5px;
+    
 }
 
 .dashboards-objects-count, .dashboards-servers-count{
@@ -279,5 +289,53 @@ background-color: blue;
     color: #FFFFFF;
     text-decoration: none;
 }
+
+.charts-container{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+}
+.charts-body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+.charts-content{
+    background-color: #F3F4FF;
+    padding: 30px 30px;
+    position: relative;
+    border-radius: 10px;
+}
+.histogram{
+    height: 550px;
+    overflow-y:scroll;
+}
+
+.histogram::-webkit-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.histogram::-webkit-scrollbar-track {
+    background: #F3F4FF;        /* цвет дорожки */
+}
+.histogram::-webkit-scrollbar-thumb {
+    background-color: gainsboro;    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    border: 1px solid gainsboro  /* padding вокруг плашки */
+}
+
+.close-charts{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+
 
 
