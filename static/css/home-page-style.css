@@ -176,7 +176,7 @@ main{
     position:fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
 }
@@ -189,7 +189,7 @@ main{
 .popup-content{
     background-color: #E0E6FF;;
     color: #000;
-    min-width: 400px;
+    min-width: 600px;
     max-width: 800px;
     padding: 30px 30px 10px;
     position: relative;
@@ -197,8 +197,8 @@ main{
 }
 .close-popup{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     cursor: pointer;
 }
 .hidden{
@@ -212,17 +212,19 @@ main{
 .popup-title-description{
     margin-top: 5px;
     margin-bottom: 2px;
+    font-weight: 700;
 }
 
 .button-delete input{
     display: block;
-    height: 30px;
-    font-size: 12px;
+    height: 40px;
+    font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
+    margin-left: 2%;
     border: 0;
-    background: #075EE1;
+    background: #FF6E6E;
     border-radius: 58px;
     color: #FFFFFF;
     font-weight: 700;
@@ -269,11 +271,11 @@ main{
 }
 
 .dashboards-objects-count{
-background-color: blue;
+background-color: #2eaadb;
 }
 
 .dashboards-servers-count{
-    background-color: red;
+    background-color: #FF6E6E;
 }
 
 .popup-objects-count, .popup-servers-count{
@@ -282,10 +284,10 @@ background-color: blue;
 
 .popup-objects-count a, .popup-servers-count a{
     display: block;
-    padding-top: 25%;
-    padding-bottom: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
     color: #FFFFFF;
     text-decoration: none;
 }

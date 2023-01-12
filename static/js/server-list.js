@@ -93,8 +93,8 @@ function openPopup(currentServer) {
     popup.classList.remove('hidden');
     popupNameServer.textContent = currentServer[1].name;
     popupDescriptionServer.textContent = currentServer[1].description;
-    popupObjectsCount.textContent = currentServer[1].objects;
-    popupProblemsCount.textContent = currentServer[1].problems;
+    popupObjectsCount.textContent = `кол-во объектов ${currentServer[1].objects}`;
+    popupProblemsCount.textContent = `кол-во проблем ${currentServer[1].problems}`;
 };
 closePopupButton.addEventListener('click', () => {
     popup.classList.add('hidden');

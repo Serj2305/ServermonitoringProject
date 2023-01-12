@@ -25,13 +25,13 @@
             <h1 class="create-integration-h">Создание интеграции</h1>
             <form action="{{ url_for('processing_data_from_fields') }}" method="post" id="integration-form">
                 <p class = 'name'>
-                    <input type="text" name="name" placeholder="Название">
+                    <input type="text" name="name" placeholder="Название*">
                 </p>
                 <p class="description" >
-                    <input type="text" name="description" placeholder="Описание" >
+                    <input type="text" name="description" placeholder="Описание*" >
                 </p>
                 <p class="url-intgr">
-                    <input type="text" name = 'url' placeholder="URL сервера" required>
+                    <input type="text" name = 'url' placeholder="URL сервера*" required>
                 </p>
                 <p class = 'login'>
                     <input type="text" name="login" placeholder="Логин">

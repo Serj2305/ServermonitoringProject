@@ -38,10 +38,16 @@ input {
     background-color: rgba(0,0,0,0);
     outline: 0;  
 }
-input::placeholder {
-    color: #696969;
+.name input::placeholder, .description input::placeholder, .url-intgr input::placeholder {
+    color: #FF6E6E;
     opacity: 0.72;
-  }
+}
+
+input::placeholder{
+    color:#696969;
+    opacity: 0.72;
+}
+
 .button-add input{
     background: #075EE1;
     border-radius: 58px;
